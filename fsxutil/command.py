@@ -57,8 +57,7 @@ def cli():
 @click.option('--region', '-r', help='AWS region')
 def create(name, size, input, output, profile, region):
     """
-    The main reason we have arrived here. This is the entry-point for the
-    utility to create/update a CloudFormation stack.
+    Create an FSx
     """
     if size > MAX_FSX_SIZE:
         logger.error('can not create FXx larger than %s TB', MAX_FSX_SIZE)
@@ -77,8 +76,7 @@ def create(name, size, input, output, profile, region):
 @click.option('--region', '-r', help='AWS region')
 def delete(id, profile, region):
     """
-    The main reason we have arrived here. This is the entry-point for the
-    utility to create/update a CloudFormation stack.
+    Delete an FSx
     """
     try:
         logger.info('delete called() id=%s', id)
@@ -91,8 +89,7 @@ def delete(id, profile, region):
 @click.option('--id', '-i', help='ID of the file system to be deleted', required=True)
 def list_addresses(id):
     """
-    The main reason we have arrived here. This is the entry-point for the
-    utility to create/update a CloudFormation stack.
+    Describe an FSx
     """
     try:
         logger.info('list_addresses called() id=%s', id)
